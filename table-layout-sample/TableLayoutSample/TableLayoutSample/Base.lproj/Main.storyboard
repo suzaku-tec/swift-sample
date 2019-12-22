@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TableLayoutSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fZ1-Vi-AST">
+                                <rect key="frame" x="0.0" y="20" width="394" height="842"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scy-K1-r87">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="G6s-5x-5ui"/>
+                                        </constraints>
+                                        <state key="normal" title="read"/>
+                                        <connections>
+                                            <action selector="tapRead:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i9c-mB-mc4"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ChZ-FK-RYD">
+                                        <rect key="frame" x="0.0" y="100" width="394" height="742"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="base" id="ydd-xG-Rl1" customClass="BaseCell" customModule="TableLayoutSample" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="394" height="96"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ydd-xG-Rl1" id="Ell-jx-hPB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="96"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ql8-4f-ciB">
+                                                            <rect key="frame" x="20" y="20" width="354" height="56"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlZ-Fu-4Pk">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="106" height="56"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pxm-bv-yYc">
+                                                                    <rect key="frame" x="106" y="0.0" width="248" height="56"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits"/>
+                                                                </textField>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="vlZ-Fu-4Pk" firstAttribute="width" secondItem="ql8-4f-ciB" secondAttribute="width" multiplier="0.3" id="hoa-hi-3pI"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="ql8-4f-ciB" secondAttribute="trailing" constant="20" symbolic="YES" id="fNK-Ew-48c"/>
+                                                        <constraint firstItem="ql8-4f-ciB" firstAttribute="top" secondItem="Ell-jx-hPB" secondAttribute="top" constant="20" symbolic="YES" id="mVV-hN-4c1"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ql8-4f-ciB" secondAttribute="bottom" constant="20" symbolic="YES" id="t0p-C2-SBT"/>
+                                                        <constraint firstItem="ql8-4f-ciB" firstAttribute="leading" secondItem="Ell-jx-hPB" secondAttribute="leading" constant="20" symbolic="YES" id="xyu-ty-5f3"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="label" destination="vlZ-Fu-4Pk" id="IMN-Sr-BNa"/>
+                                                    <outlet property="textField" destination="pxm-bv-yYc" id="Qh7-ya-h1n"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fZ1-Vi-AST" secondAttribute="trailing" constant="20" symbolic="YES" id="Nfd-98-S8V"/>
+                            <constraint firstItem="fZ1-Vi-AST" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" symbolic="YES" id="WQ0-XV-KgN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fZ1-Vi-AST" secondAttribute="bottom" id="t7U-qf-PPv"/>
+                            <constraint firstItem="fZ1-Vi-AST" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tUS-64-XHQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="ChZ-FK-RYD" id="iCp-qo-4YG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="102"/>
+        </scene>
+    </scenes>
+</document>
